@@ -1,0 +1,50 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+apply from: '../dependencies.gradle'
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "dev.mobilegeeks.feature_module_navigation_tutorial"
+        minSdk 24
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(':core')
+    implementation project(':feature1')
+    implementation project(':feature2')
+    implementation deps.core_ktx
+    implementation deps.appcompat
+    implementation deps.material
+    implementation deps.navigation_fragment
+    implementation deps.navigation_ui
+    implementation deps.lifecycle_viewmodel_ktx
+    testImplementation deps.junit
+    androidTestImplementation deps.android_junit
+    androidTestImplementation deps.espresso_core
+}

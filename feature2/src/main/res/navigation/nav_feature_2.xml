@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_feature_2"
+    app:startDestination="@id/fragment_feature_2">
+    <fragment
+        android:id="@+id/fragment_feature_2"
+        android:name="dev.mobilegeeks.feature2.FragmentFeature2">
+        <argument
+            android:name="model"
+            app:argType="dev.mobilegeeks.core.CommonModel" />
+    </fragment>
+</navigation>
